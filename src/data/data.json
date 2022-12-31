@@ -1,0 +1,19 @@
+{
+    "products": [
+        {
+            "id": 1,
+            "name": "Product 1",
+            "status": "want_to_try"
+        },
+        {
+            "id": 2,
+            "name": "Product 2",
+            "status": "recommended"
+        },
+        {
+            "id": 3,
+            "name": "Product 3",
+            "status": "not_recommended"
+        }
+    ]
+}
