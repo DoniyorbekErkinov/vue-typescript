@@ -1,7 +1,9 @@
+import { productsStatusList } from "./constants"
+
 export type ProductType = {
     id: string | number
     name: string
-    status: string
+    status: Status | string
 }
 export type ShopType = {
     id: number
@@ -9,3 +11,5 @@ export type ShopType = {
     address: string
     status: string
 }
+
+type Status =  typeof productsStatusList[number]
