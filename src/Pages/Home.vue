@@ -13,16 +13,21 @@ import Products from "./Products/Products.vue";
 import data from '../data/data.json'
 import Shops from "./shops/Shops.vue";
 import Count from "./Count/Count.vue";
+import {useStore} from '@/store/store'
 type DataShape = {
     products: import("@/types/types").ProductType[]
 }
-export default defineComponent({
+const store = useStore()
+export default defineComponent({    
     data: (): DataShape => {
         return {
-            products: data
+            products: []
         };
     },
-    components: { Products, Shops, Count }
+    components: { Products, Shops, Count },
+    created() {        
+        this.products = store.$state.list
+    },
 })
 </script>
 

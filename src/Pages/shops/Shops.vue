@@ -7,8 +7,10 @@
                 {{ item.name }}
             </li>
         </ul>
+        <label>{{ inputData }}</label>
         <input
-            v-model="inputData"
+            :value="inputData"
+            @input="updateData"
             placeholder="Data"
             ref="elInputData"
             type="text"
@@ -57,6 +59,13 @@ const elInputData = ref<HTMLInputElement | null>(null)
 onMounted(() => {
     elInputData.value?.focus()
 })
+const updateData = (event) => {
+    if(event.data === ' ') {
+        inputData.value = (event.target as HTMLInputElement).value
+        // console.log(event.target.value);
+    }
+    
+}
 </script>
 
 <style scoped>
