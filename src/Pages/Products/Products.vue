@@ -34,7 +34,7 @@ export default defineComponent({
         //     return product
         // }
         /**
-         * Checks type of payload
+         * Checks type of payload 
          */
         clickMe(product: ProductType) {
             console.log(product);

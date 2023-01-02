@@ -31,6 +31,7 @@ export default {
 }
 .main {
   display: flex;
+  padding: 60px 20px;
   justify-content: space-between;
 }
 .sidebar {

@@ -1,22 +1,28 @@
 <template>
     <div>
-        <h1>Home</h1>
+        <h4>Home</h4>
         <Products :products="products"></Products>
+        <Shops></Shops>
+        <Count></Count>
     </div>
 </template>
 
-<script>
+<script lang="ts">
 import { defineComponent } from "vue"
 import Products from "./Products/Products.vue";
-import data from '@/data/data.json'
-
+import data from '../data/data.json'
+import Shops from "./shops/Shops.vue";
+import Count from "./Count/Count.vue";
+type DataShape = {
+    products: import("@/types/types").ProductType[]
+}
 export default defineComponent({
-    data() {
+    data: (): DataShape => {
         return {
-            products: data.products
+            products: data
         };
     },
-    components: { Products }
+    components: { Products, Shops, Count }
 })
 </script>
 
