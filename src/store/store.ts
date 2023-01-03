@@ -7,6 +7,10 @@ export const useStore = defineStore('Store', {
     state: (): StateShape => ({
         list: data
     }),
-    getters: {},
+    getters: {
+        getLength: (state) => {
+            state.list.length
+        }
+    },
     actions: {}
 })
